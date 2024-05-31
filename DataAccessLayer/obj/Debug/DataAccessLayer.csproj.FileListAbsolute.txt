@@ -1,0 +1,9 @@
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\DataAccessLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\DataAccessLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\DataAccessLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.SqlCe.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\DataAccessLayer\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache

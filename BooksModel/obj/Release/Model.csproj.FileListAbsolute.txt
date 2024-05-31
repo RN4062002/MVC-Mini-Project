@@ -1,0 +1,8 @@
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\BooksModel\bin\Release\BooksModel.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\BooksModel\bin\Release\BooksModel.pdb
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\BooksModel\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\BooksModel\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\BooksModel\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.SqlCe.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\BooksModel\bin\Release\Microsoft.Practices.ObjectBuilder2.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\BooksModel\obj\Release\BooksModel.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\BooksModel\obj\Release\BooksModel.pdb

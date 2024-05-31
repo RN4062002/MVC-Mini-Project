@@ -1,0 +1,9 @@
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\BooksModel\bin\Debug\BooksModel.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\BooksModel\bin\Debug\BooksModel.pdb
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\BooksModel\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\BooksModel\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\BooksModel\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.SqlCe.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\BooksModel\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\BooksModel\obj\Debug\BooksModel.csprojResolveAssemblyReference.cache
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\BooksModel\obj\Debug\BooksModel.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\BooksModel\obj\Debug\BooksModel.pdb

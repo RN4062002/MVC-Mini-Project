@@ -1,0 +1,72 @@
+﻿@model  Model.BooksModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Add Book</h2>
+
+
+@using (Html.BeginForm("Create", "Index"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.BookName)
+        @Html.TextBoxFor(m => m.BookName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.BookPrice)
+        @Html.TextBoxFor(m => m.BookPrice, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.BookStock)
+        @Html.TextBoxFor(m => m.BookStock, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Publisher")
+        @Html.DropDownListFor(m=>m.PublisherID, new SelectList(Model.PublishersList, "PublisherID", "PublisherName"), "Select Publisher", new { @class = "form-control" })&nbsp; &nbsp;      
+    </div>
+    <div class="form-group">
+        @Html.Label("Author")
+        @Html.DropDownListFor(m => m.AuthorID, new SelectList(Model.AuthorsList, "AuthorID", "AuthorName"), "Select Author", new { @class = "form-control" })&nbsp; &nbsp;
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="Create()">Save</button>
+
+        }
+<script>
+    @*$(document).ready(function () {
+
+        function createFun(BookName, BookPrice, BookStock, PublisherID, AuthorID) {
+            var obj =
+            {
+                BookName: BookName,
+                BookPrice: BookPrice,
+                BookStock: BookStock,
+                PublisherID: PublisherID,
+                AuthorID: AuthorID
+
+            }
+            $.ajax({
+                url: '@Url.Action("Create", "Index")',
+                method: "GET",
+                data: obj,
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+
+        }
+        
+        $('#saveBtn').submit(function () {
+            var BookName = $(this).val();
+            var BookPrice = $(this).val();
+            var BookStock = $(this).val();
+            var PublisherID = $(this).val();
+            var AuthorID = $(this).val();
+            createFun(BookName, BookPrice, BookStock, PublisherID, AuthorID);
+        });
+    })*@
+</script>

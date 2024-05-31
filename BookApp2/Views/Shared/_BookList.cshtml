@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Issue Book Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- Book Table -->
+    <div class="container">
+        <table class="table table-striped table-responsive ">
+            <tr style="background-color:aliceblue">
+                <th class="text-center d-none">BookID</th>
+                <th class="text-center">No</th>
+                <th class="text-center">Book Name</th>
+                <th class="text-center">Publisher Name</th>
+                <th class="text-center">Author Name</th>
+                <th class="text-center">Actions</th>
+            </tr>
+            <tbody id="tbody">
+              
+            </tbody>
+        </table>
+      
+    </div>
+
+    <div class="container"  >
+        <ul id="pagination" class="pagination"></ul>
+    </div>
+
+
+    <script type="text/javascript">
+
+        var PageNumber = 1;
+        var TotalCount;
+        var booksArray = [];
+        var addedBooksSet = new Set();  // Define a set to track added BookIDs
+
+        $(document).ready(function () {   
+            BookGetList();  
+        })
+
+        function BookGetList(PageNumber) {
+            var obj = {
+                PageNumber : PageNumber
+            }
+       
+            $.ajax({             
+                url: '/IssueBooks/BookGetList',
+                method: "GET",
+                data:obj,
+                success: function (data) {
+                    console.log(data)
+                    TotalCount = data.Totalcount;
+                    TotalRecords = data.TotalRecordes
+                    showBooks(data.bookList);
+                    paggination();
+                   
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        }
+
+        function showBooks(books) {
+            debugger;
+            var tableBody = $('#tbody');
+            tableBody.empty();
+            booksArray = books; // Store books in the array
+
+            books.forEach((book, index) => {
+                let row = `
+            <tr>
+                <td class ="text-center">${index + 1}</td>
+                 <td class ="text-center d-none">${book.BookID}</td>
+                <td class="text-center">${book.BookName}</td>
+                <td class="text-center">${book.PublisherName}</td>
+                <td class="text-center">${book.AuthorName}</td>
+                <td class="text-center">
+                    <button type="button" class ="selectBook btn btn-outline-primary" data-index="${index}">
+                        Select
+                    </button>
+                </td>
+            </tr>`;
+                tableBody.append(row);
+            });
+        }
+
+        function paggination() {
+
+            $("#pagination").empty();
+            var numPagesToShow = 5;
+
+            if (PageNumber == null) {
+                PageNumber = 1;
+            }
+
+            // Calculate start and end page numbers to display
+            var startPage = Math.max(1, PageNumber - Math.floor(numPagesToShow / 2));
+            var endPage = Math.min(TotalCount, startPage + numPagesToShow - 1);
+
+
+            if (PageNumber > 1) {
+                $("#pagination").append(`<li class="page-item" id="prevPage"><a class="page-link">Previous</a></li>`)
+            }
+
+            for (var i = startPage; i <= endPage; i++) {
+                if (i == PageNumber) {
+                    $("#pagination").append(`<li class="page-item active" id="paging" value = ${i}><a class="page-link">${i}</a></li>`);
+                }
+                else {
+                    $("#pagination").append(`<li class="page-item" id="paging" value = ${i}  ><a class="page-link">${i}</a></li>`);
+                }
+            }
+            if (PageNumber < TotalCount) {
+                $("#pagination").append(` <li class="page-item" id="nextPage"><a class="page-link">Next</a></li>`)
+            }
+
+        }
+
+        $(document).on('click', '.selectBook', function (event) {
+            debugger;
+            event.stopImmediatePropagation();
+            var index = $(this).data('index');
+            var book = booksArray[index]; // Retrieve book data from the array
+       
+            if (addedBooksSet.has(book.BookID)) {
+                alert('This book has already been added.');
+                return;
+            }
+              addedBooksSet.add(book.BookID); 
+
+            let tbody = $('#tablebody');
+            let row = `
+        <tr>
+            <td class ="text-center d-none" style="vertical-align:middle;" scope="row">${book.BookID}</td>
+            <td class="text-center" style="vertical-align:middle;" scope="row">${book.BookName}</td>
+            <td class="text-center" style="vertical-align:middle;" scope="row">${book.PublisherName}</td>
+            <td class="text-center" style="vertical-align:middle;" scope="row">${book.AuthorName}</td>
+            <td class="text-center" style="vertical-align:middle;" scope="row">
+                <input type="number" class="form-control" value="1" style="width: 6rem" />
+            </td>
+            <td class="text-center" style="vertical-align:middle;" scope="row">
+                <button type="button" class="removeBookBtn btn btn-danger" style="vertical-align:middle;"> Remove </button>
+            </td>
+        </tr>`;
+            tbody.append(row);
+
+        });
+
+        $(document).on('click', '.removeBookBtn', function (event) {
+            event.stopImmediatePropagation();
+            var row = $(this).closest('tr');
+            var bookID = row.find('td:first').text();
+
+          
+            addedBooksSet.delete(bookID);  // Remove the BookID from the set
+            row.remove();
+        });
+
+        $(document).on('click', '#paging', function () {
+            debugger
+            PageNumber = $(this).val();
+         
+            BookGetList(PageNumber);
+           
+        });
+
+        $(document).on('click', '#prevPage', function () {
+            if (PageNumber > 1) {
+                PageNumber--;
+                BookGetList(PageNumber);
+            }
+        });
+
+        $(document).on('click', '#nextPage', function () {
+            PageNumber++; 
+            BookGetList(PageNumber);
+        });
+
+       
+      
+    </script>
+</body>
+</html>

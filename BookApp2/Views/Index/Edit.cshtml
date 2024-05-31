@@ -1,0 +1,65 @@
+﻿@model Model.BooksModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+    @using (Html.BeginForm("Edit", "Index"))
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(m => m.BookID)
+        <label>Book Name</label>
+        @Html.TextBoxFor(m =>m.BookName ,new { @class ="form-control"})
+
+        <label>Book Price</label>
+        @Html.TextBoxFor(m => m.BookPrice, new { @class = "form-control" })
+
+        <label>Book Stock</label>
+        @Html.TextBoxFor(m => m.BookStock, new { @class = "form-control" })
+        <p></p>
+        <div class="form-group">
+            @Html.Label("Publisher")
+            @Html.DropDownListFor(m=>m.PublisherID, new SelectList(Model.PublishersList,"PublisherID", "PublisherName"), "Select Publisher", new { @class = "form-control" })&nbsp; &nbsp;
+        </div>
+        <div class="form-group">
+            @Html.Label("Author")
+            @Html.DropDownListFor(m => m.AuthorID, new SelectList(Model.AuthorsList, "AuthorID", "AuthorName"), "Select Author", new { @class = "form-control" })&nbsp; &nbsp;
+        </div>
+            <button type="submit" class="btn btn-primary" onclick="Edit()">Save</button>
+    }
+
+
+    <script >
+        @*$(document).ready(function () {
+
+            function editFun(BookID) {
+                var obj =
+                {
+                    BookID: BookID
+                }
+                $.ajax({
+                    url: '@Url.Action("Edit", "Index")',
+                    method: "Post",
+                    data: obj,
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data);
+
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+
+            }
+
+            $('#saveBtn').submit(function () {
+                var BookID = $(this).val();
+                editFun(BookID)
+            });
+        })*@
+    </script>
+
+

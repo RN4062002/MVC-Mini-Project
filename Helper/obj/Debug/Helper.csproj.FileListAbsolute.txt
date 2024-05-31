@@ -1,0 +1,5 @@
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\Helper\bin\Debug\Helper.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\Helper\bin\Debug\Helper.pdb
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\Helper\obj\Debug\Helper.csprojResolveAssemblyReference.cache
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\Helper\obj\Debug\Helper.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\Helper\obj\Debug\Helper.pdb

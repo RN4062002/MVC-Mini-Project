@@ -1,0 +1,5 @@
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\PublishersModel\bin\Debug\PublishersModel.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\PublishersModel\bin\Debug\PublishersModel.pdb
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\PublishersModel\obj\Debug\PublishersModel.csprojResolveAssemblyReference.cache
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\PublishersModel\obj\Debug\PublishersModel.dll
+C:\Users\RohanNagargoje\documents\visual studio 2015\Projects\BookApp2\PublishersModel\obj\Debug\PublishersModel.pdb
